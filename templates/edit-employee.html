@@ -1,0 +1,24 @@
+﻿<form class="edit-employee-form">
+	<legend>{{ employee._id ? 'Update' : 'Add' }} Employee</legend>
+
+	<div class="field">
+		<label for="firstname">First Name</label>
+		<input id="firstname" type="text" ng-model="employee.firstname" required />
+	</div>
+	<div class="field">
+		<label for="lastname">Last Name</label>
+		<input id="lastname" type="text" ng-model="employee.lastname" required />
+	</div>
+	<div class="field">
+		<label for="designation">Designation</label>
+		<input id="designation" type="text" ng-model="employee.designation" required />
+	</div>
+
+	<hr />
+
+	<button ng-if="!employee._id" ng-click="addEmployee()" type="button" class="btn">Add</button>
+	<button ng-if="employee._id" ng-click="updateEmployee()" type="button" class="btn">Update</button>
+
+	<input ng-if="employee._id" ng-model="employee._id" type="hidden" />
+	<button ng-if="employee._id" ng-click="removeEmployee()" type="button" class="btn btn-danger delete">Delete</button>
+</form>

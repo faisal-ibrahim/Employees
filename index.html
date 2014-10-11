@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="empMgr">
+	<head>
+		<meta charset="utf-8" />
+		<title>Employee Manager</title>
+		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<meta name="viewport" content="width=device-width" />
+		<link href="css/site.css" rel="stylesheet"/>
+		<link href="css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<header>
+			<div class="content-wrapper">
+				<div class="float-left">
+					<p class="site-title"><a href="/">logo</a></p>
+				</div>
+			</div>
+		</header>
+		<div id="body">
+			<section class="content-wrapper main-content clear-fix">
+				<div>
+					<h1>Employee Manager</h1>
+					<hr />
+					<div ng-view></div>
+				</div>
+			</section>
+		</div>
+		<footer>
+			<div class="content-wrapper">
+				<div class="float-left">
+					<p>Built using Node.js, MongoDB, AngularJS</p>
+				</div>
+			</div>
+		</footer>
+
+
+		<div class="scripts-container">
+			<div class="js-libs">
+				<script src="js/lib/jquery-2.0.3.min.js"></script>
+				<script src="js/lib/bootstrap.min.js"></script>
+				<script src="js/lib/angular.min.js"></script>
+				<script src="js/lib/angular-resource.min.js"></script>
+			</div>
+
+			<script src="js/controllers.js"></script>
+			<script src="js/services.js"></script>
+			<script src="js/app.js"></script>
+		</div>
+	</body>
+</html>

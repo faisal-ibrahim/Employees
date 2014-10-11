@@ -1,0 +1,32 @@
+﻿<a id="btnNewUser" href="#!/new" class="btn btn-primary">New User</a>
+<hr />
+<label for="txtFilter" class="filter float_left">Filter</label>
+<input ng-model="query" type="text" placeholder="Keyword" />
+<hr />
+
+<table class="table table-hover">
+	<tr>
+		<th ng-click="orderProp='firstname'; ascending=!ascending" class="sorter" style="width: 200px;">
+			First Name
+			<span ng-if="orderProp=='firstname'">{{ascending ? '&#9662;' : '&#9652;' }}</span>
+		</th>
+		<th ng-click="orderProp='lastname'; ascending=!ascending" class="sorter" style="width: 200px;">
+			Last Name
+			<span ng-if="orderProp=='lastname'">{{ascending ? '&#9662;' : '&#9652;' }}</span>
+		</th>
+		<th ng-click="orderProp='designation'; ascending=!ascending" class="sorter" style="width: 340px;">
+			Designation
+			<span ng-if="orderProp=='designation'">{{ascending ? '&#9662;' : '&#9652;' }}</span>
+		</th>
+		<th></th>
+	</tr>
+	<tr ng-repeat="employee in employees | filter:query | orderBy:orderProp:ascending">
+		<td>{{employee.firstname}}</td>
+		<td>{{employee.lastname}}</td>
+		<td>{{employee.designation}}</td>
+		<td style="text-align:right;">
+			<a href="#!/edit/{{employee._id}}" class="btn">Edit</a>
+			<a href="javascript:void(0);" ng-click="removeEmployee(employee._id)" class="btn btn-danger">Delete</a>
+		</td>
+	</tr>
+</table>
